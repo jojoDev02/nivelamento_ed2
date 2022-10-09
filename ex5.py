@@ -9,22 +9,30 @@ def menu():
 
 run = True
 paginas = []
+pilha = []
+
 while run:
   menu()
   op = str(input())
   if op == '1':
     paginas += ['Pg 1']
+    pilha += ['Pg 1']
     print(paginas)
   elif(op == '2'):
-    paginas += ['Pg 2']
+    paginas += ['Pg 2'] 
+    pilha += ['Pg 2']
     print(paginas)
   elif op == '3':
     paginas += ['Pg 3']
+    pilha += ['Pg 3']
     print(paginas)  
   elif op == '4':
-    paginas += ['Voltar']
+    if(len(pilha) == 0):
+        print("Vazio")
+    else:
+        paginas += ['Voltar']
+        pilha.pop()
     print(paginas)
   else:
     print(paginas)
     run = False
-  
